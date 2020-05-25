@@ -44,7 +44,7 @@ inputs:
   mounts:
     description: "Docker / Attach a filesystem mount to the container (comma separated)"
     required: false
-    default: "no"
+    default: ""
   log_driver:
     description: "Docker / Logging driver for the container"
     required: false
