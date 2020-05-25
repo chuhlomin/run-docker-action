@@ -71,7 +71,7 @@ Action has no outputs
 ## Example usage
 
 ```yaml
-uses: actions/run-docker-action@v1.0
+uses: chuhlomin/run-docker-action@v1.0
 env:
   SSH_KEY: ${{ secrets.SSH_KEY }}
   SECRET_DB_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
