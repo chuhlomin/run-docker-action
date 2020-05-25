@@ -1,0 +1,58 @@
+name: "Run Docker container on the remote host"
+description: "Action SSH to remote host and runs `docker run` with given arguments"
+inputs:
+  server:
+    description: "SSH / Server hostname"
+    required: true
+  username:
+    description: "SSH / Username"
+    required: true
+  ssh_key:
+    description: "SSH / Private SSH key to connect to the server (use secrets)"
+    required: true
+  sudo:
+    description: "Prefix docker run command with sudo"
+    required: true
+    default: ""
+  image:
+    description: "Docker / Image"
+    required: true
+  envs:
+    description: "Docker / Set environment variables (JSON)"
+    required: false
+    default: ""
+  network:
+    description: "Docker / Connect a container to a network"
+    required: false
+    default: "default"
+  network_alias:
+    description: "Docker / Add network-scoped alias for the container"
+    required: false
+    default: ""
+  container_name:
+    description: "Docker / Assign a name to the container"
+    required: false
+    default: ""
+  expose:
+    description: "Docker / Expose a port or a range of ports"
+    required: false
+    default: ""
+  resart:
+    description: "Docker / Restart policy to apply when a container exits (default \"no\")"
+    required: false
+    default: "no"
+  mounts:
+    description: "Docker / Attach a filesystem mount to the container (comma separated)"
+    required: false
+    default: "no"
+  log_driver:
+    description: "Docker / Logging driver for the container"
+    required: false
+    default: ""
+  log_opt:
+    description: "Docker / Log driver options"
+    required: false
+    default: ""
+runs:
+  using: "docker"
+  image: "Dockerfile"
