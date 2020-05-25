@@ -1,9 +1,10 @@
 FROM alpine:3.10
 
 RUN apk --update add jq && \
-    apk add openssh && \ 
+    apk add openssh && \
     rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT /entrypoint.sh
